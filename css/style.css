@@ -1,0 +1,251 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color: #fff;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* HEADER */
+
+header{
+    width: 100%;
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    z-index: 100;
+}
+
+.logo img{
+    width: 130px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.logo img:hover{
+    transform: scale(1.05);
+}
+
+header ul{
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+header ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 17px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+header ul li a:hover{
+    color: #ff4d4d;
+}
+
+/* HERO SECTION */
+
+main section:first-child{
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Background Image */
+
+main section:first-child img:first-child{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+/* Dark Overlay */
+
+main section:first-child::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.55);
+    z-index: -1;
+}
+
+/* Zomato Logo */
+
+main section:first-child img:nth-child(2){
+    width: 320px;
+    margin-bottom: 25px;
+    animation: fadeDown 1.2s ease;
+}
+
+main section:first-child p{
+    font-size: 2.3rem;
+    font-weight: 500;
+    margin-bottom: 25px;
+    animation: fadeUp 1.2s ease;
+}
+
+main section:first-child input{
+    width: 55%;
+    max-width: 750px;
+    padding: 18px 22px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    outline: none;
+    color: #333;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    transition: 0.3s;
+}
+
+main section:first-child input:focus{
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(255, 0, 0, 0.35);
+}
+
+/* FOOD DELIVERY SECTION */
+
+main section:nth-child(2){
+    background: #fff5f5;
+    color: #333;
+    padding: 80px 8%;
+}
+
+.food-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 30px;
+}
+
+.food-card{
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.food-card:hover{
+    transform: translateY(-10px);
+}
+
+.food-card img{
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.food-content{
+    padding: 20px;
+}
+
+.food-content h3{
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #e23744;
+}
+
+.food-content p{
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* FOOTER */
+
+footer{
+    background: #e23744;
+    text-align: center;
+    padding: 20px;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+}
+
+/* Animations */
+
+@keyframes fadeDown{
+    from{
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeUp{
+    from{
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+
+@media(max-width: 900px){
+
+    header{
+        padding: 20px 5%;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    header ul{
+        gap: 18px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    main section:first-child p{
+        font-size: 1.8rem;
+    }
+
+    main section:first-child input{
+        width: 90%;
+    }
+
+    main section:first-child img:nth-child(2){
+        width: 220px;
+    }
+}
+
+@media(max-width: 500px){
+
+    header ul li a{
+        font-size: 14px;
+    }
+
+    main section:first-child p{
+        font-size: 1.4rem;
+        padding: 0 10px;
+    }
+
+    main section:first-child input{
+        padding: 14px 16px;
+    }
+}
